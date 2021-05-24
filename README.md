@@ -2,10 +2,11 @@
 
 Building my own ToDo App for me and my gf. 
 
-## Prerequisities 
+## Build with
 
-* NodeJS 
-* Javascript 
+* [NodeJS](https://nodejs.org)
+* [Javascript](https://www.javascript.com) 
+* [SQLite](https://www.sqlite.org)
 
 ## Website 
 
