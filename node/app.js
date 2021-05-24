@@ -8,7 +8,7 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 // Root endpoint
-app.get('/', (req, res) => {res.send('Hello there!')})
+app.get('/', (req, res) => {res.sendFile('public/index.html', {root: __dirname})})
 
 
 // API endpoints

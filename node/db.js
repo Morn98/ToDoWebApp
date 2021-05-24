@@ -8,7 +8,7 @@ const DBSOURCE = "db.sqlite"
 let db = new sqlite3.Database(DBSOURCE, (err) => {
     if (err) {
       // Cannot open database
-      console.error(err.message)
+      console.error('[-] A problem occured - ' + err.message)
       throw err
     }else{
         console.log('[+] Connected to the SQLite database.')
