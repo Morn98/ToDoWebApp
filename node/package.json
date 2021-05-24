@@ -1,0 +1,25 @@
+{
+  "name": "todowebapp",
+  "version": "1.0.0",
+  "description": "Building a ToDo Web Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morn98/ToDoWebApp.git"
+  },
+  "keywords": [
+    "ToDo"
+  ],
+  "author": "Moritz Nentwig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Morn98/ToDoWebApp/issues"
+  },
+  "homepage": "https://github.com/Morn98/ToDoWebApp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
