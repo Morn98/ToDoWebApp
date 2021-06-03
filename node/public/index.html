@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
-<title>ToDo Web App</title>
-<meta name="Moritz Nentwig" content="ToDo Web App">
-<head>
-    <style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-        </style>
-</head>
-<body>
+  <title>ToDo Web App</title>
+    <meta name="Moritz Nentwig" content="ToDo Web App">
+  <head>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <script language="javascript" type="text/javascript" src="js/todo.js"></script>
+  </head>
 
-<h1>ToDo Web App </h1>
+  <body>
 
-<p>Building a nice Web App for my Todo list</p>
-<ul>
-    <li><a href="default.asp">Home</a></li>
-    <li><a href="news.asp">News</a></li>
-    <li><a href="contact.asp">Contact</a></li>
-    <li><a href="about.asp">About</a></li>
-  </ul>
-</body>
+    <h1>ToDo Web App </h1>
+
+    <p>Building a nice Web App for my Todo list</p>
+
+    <div class="header" id="myDIV">
+      <h2> Great Todo list</h2>
+      <input type="text" id="myInput" placeholder="Enter some stuff todo...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+    
+    <ul id="myUL">
+      <li>Hit the gym</li>
+      <li>Pay bills</li>
+      <li>Meet George</li>
+      <li>Buy eggs</li>
+      <li>Read a book</li>
+      <li>Organize office</li>
+    </ul>
+
+    <div class="navbar" id="myNavbar">
+      </li><a href="index.html">Home</a>
+      <a href="#news">News</a>
+      <a href="contact">Contact</a>
+      <a href="about">About</a>
+    </div>
+  </body>
 </html>
