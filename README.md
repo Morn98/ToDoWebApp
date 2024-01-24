@@ -6,7 +6,7 @@ This simple ToDo Web App operates independently of a backend. If you wish to pre
 
 * Angular v17
 
-## Build and Start localy with
+## Build and Start locally with
 
 ```bash
 ng serve
