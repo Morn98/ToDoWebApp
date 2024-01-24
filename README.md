@@ -1,16 +1,20 @@
-# ToDo Web App 
+# Simple ToDo Web Application
 
-Building my own ToDo App for me and my gf. 
+This simple ToDo Web App operates independently of a backend. If you wish to preserve your ToDo list, you need to download and store it on your local device. A reimport is possible.  
 
 ## Build with
 
-* [NodeJS](https://nodejs.org)
-* [Javascript](https://www.javascript.com) 
-* [SQLite](https://www.sqlite.org)
+* Angular v17
 
-## Website 
+## Build and Start localy with
 
-[ToDo Web App](http://localhost:3000)
+```bash
+ng serve
+```
+
+## Local Website 
+
+[ToDo Web App](http://localhost:4200)
 
 ## Contributing
 
