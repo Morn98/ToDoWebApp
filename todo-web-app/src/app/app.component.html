@@ -3,15 +3,39 @@
 </header>
 
 <div class="todo-container">
+
+  <div class="import-export">
+    <input type="file" id="fileToDoInput" (change)="handleFileInput($event)">
+    <button (click)="exportToDoEntries()">Export ToDo List</button>
+  </div>
+
   <div class="insert-container">
-    <h1>Insert ToDo</h1>
+    <h2>Insert new ToDo</h2>
+    <input type="text" placeholder="Insert ToDo Entry" [(ngModel)]="newToDoEntry" (keyup.enter)="addToDoEntry()"/>
+    <button (click)="addToDoEntry()">Add ToDo</button>
   </div>
 
   <div class="open-todos">
-    <h1>Open ToDos</h1>
+    <h2>Open ToDos</h2>
+    <table>
+      <tr *ngFor="let openToDoEntry of openToDoEntries">
+        <td>{{openToDoEntry}}</td>
+        <td><button (click)="completeToDoEntry(openToDoEntry)">Complete</button></td>
+      </tr>
+    </table>
   </div>
 
   <div class="completed-todos">
-    <h1>Completed ToDos</h1>
+    <h2>Completed ToDos</h2>
+    <button (click)="showCompletedToDos()">
+      {{showCompleted ? 'Hide' : 'Show'}} Completed ToDos
+    </button>
+    <table *ngIf="showCompleted">
+      <tr *ngFor="let doneToDoEntry of doneToDoEntries">
+        <td>{{doneToDoEntry}}</td>
+        <td><button (click)="moveToDoEntryToOpen(doneToDoEntry)">Undone</button></td>
+      </tr>
+    </table>
   </div>
+
 </div>
