@@ -56,7 +56,29 @@ header {
 
 .material-symbols-outlined:hover {
     color: #b8bbc7;
-    border-color: #b8bbc7;
+    //border-color: #b8bbc7;
     cursor: pointer;
 }
 
+.todo-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 0;
+    color: #2f3034;
+    font-style: italic;
+    width: 100%;
+}
+
+.completed-todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+.completed-todo-container {
+    display: flex;
+    justify-content: flex-end;
+  }

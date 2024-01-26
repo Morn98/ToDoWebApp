@@ -27,13 +27,17 @@
   </div>
 
   <div class="insert-container">
-    <h2>Insert new ToDo</h2>
+    <div class="todo-header">
+      Insert new ToDo
+    </div>
     <input type="text" placeholder="Insert ToDo Entry" [(ngModel)]="newToDoEntry" (keyup.enter)="addToDoEntry()"/>
     <button (click)="addToDoEntry()">Add ToDo</button>
   </div>
 
   <div class="open-todos">
-    <h2>Open ToDos</h2>
+    <div class="todo-header">
+      Open ToDos
+    </div>
     <table>
       <tr *ngFor="let openToDoEntry of openToDoEntries">
         <td>{{openToDoEntry}}</td>
@@ -43,10 +47,30 @@
   </div>
 
   <div class="completed-todos">
-    <h2>Completed ToDos</h2>
-    <button (click)="showCompletedToDos()">
-      {{showCompleted ? 'Hide' : 'Show'}} Completed ToDos
-    </button>
+    <div class="completed-todo-container">
+    <div class="todo-header">
+      Completed ToDos
+    </div>
+
+    @if(showCompleted) {
+      <label for="showCompletedToDos">
+        <span class="material-symbols-outlined">
+          unfold_less
+        </span>
+      </label>
+    } @else {
+      <label for="showCompletedToDos">
+        <span class="material-symbols-outlined">
+          unfold_more
+        </span>
+      </label>}
+    <div class="show-completed-button-container">
+      <button id="showCompletedToDos" (click)="showCompletedToDos()" style="display: none" title="{{showCompleted ? 'Hide' : 'Show'}} Completed ToDos">
+        {{showCompleted ? 'Hide' : 'Show'}} Completed ToDos
+      </button>
+    </div>
+    </div>
+
     <table *ngIf="showCompleted">
       <tr *ngFor="let doneToDoEntry of doneToDoEntries">
         <td>{{doneToDoEntry}}</td>
