@@ -30,8 +30,14 @@
     <div class="todo-header-text">
       {{"Insert new ToDo"}}
     </div>
-    <input type="text" placeholder="Insert ToDo Entry" [(ngModel)]="newToDoEntry" (keyup.enter)="addToDoEntry()" />
-    <button (click)="addToDoEntry()">Add ToDo</button>
+
+    <mat-form-field class="insert-textfield" appearance="fill">
+      <mat-label>ToDo</mat-label>
+      <input matInput 
+        placeholder="Insert ToDo Entry" 
+        [(ngModel)]="newToDoEntry" 
+        (keyup.enter)="addToDoEntry()"/>
+    </mat-form-field>
   </div>
 
   <div class="open-todos">
