@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -69,7 +71,7 @@ export class AppComponent {
 
   handleFileInput(event: Event) {
     const fileInput = event.target as HTMLInputElement;
-    if ( fileInput.files && fileInput.files.length > 0) {
+    if (fileInput.files && fileInput.files.length > 0) {
       const file = fileInput.files[0];
       const fileReader = new FileReader();
       fileReader.onload = (e) => {
@@ -90,7 +92,7 @@ export class AppComponent {
     const blob = new Blob([jsonData], { type: 'application/json' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.href = url; 
+    link.href = url;
     link.download = filename;
     link.click();
     window.URL.revokeObjectURL(url);

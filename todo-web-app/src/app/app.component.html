@@ -1,42 +1,42 @@
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <header>
   <div class="header-text">
-    Simple ToDo Web Application
+    {{"Simple ToDo Web Application"}}
   </div>
 </header>
 
 <div class="todo-container">
 
   <div class="import-export">
-    <label for="importToDoEntries">
+    <input #fileInput type="file" id="importToDoEntries" (change)="handleFileInput($event)" style="display: none">
+    <button mat-button matTooltip="Import ToDo List" (click)="fileInput.click()" class>
       <span class="material-symbols-outlined">
         upload
       </span>
-    </label>
-    <input type="file" id="importToDoEntries" (change)="handleFileInput($event)" style="display: none">
-    
-    <label for="exportToDoEntries">
+    </button>
+
+    <button mat-button matTooltip="Export ToDo List" (click)="exportToDoEntries()">
       <span class="material-symbols-outlined">
         download
       </span>
-    </label>
-    <button id="exportToDoEntries" (click)="exportToDoEntries()" style="display: none">Export ToDo List</button>
+    </button>
   </div>
 
   <div class="insert-container">
-    <div class="todo-header">
-      Insert new ToDo
+    <div class="todo-header-text">
+      {{"Insert new ToDo"}}
     </div>
-    <input type="text" placeholder="Insert ToDo Entry" [(ngModel)]="newToDoEntry" (keyup.enter)="addToDoEntry()"/>
+    <input type="text" placeholder="Insert ToDo Entry" [(ngModel)]="newToDoEntry" (keyup.enter)="addToDoEntry()" />
     <button (click)="addToDoEntry()">Add ToDo</button>
   </div>
 
   <div class="open-todos">
-    <div class="todo-header">
-      Open ToDos
+    <div class="todo-header-text">
+      {{"Open ToDos"}}
     </div>
     <table>
       <tr *ngFor="let openToDoEntry of openToDoEntries">
@@ -46,37 +46,36 @@
     </table>
   </div>
 
-  <div class="completed-todos">
-    <div class="completed-todo-container">
-    <div class="todo-header">
-      Completed ToDos
+  <div class="completed-todos-container">
+    <div class="completed-todo">
+
+      <div class="todo-header-text">
+        {{"Completed ToDos"}}
+      </div>
+
+      <div class="show-completed-button">
+        @if (doneToDoEntries.length > 0) {
+        <button mat-icon-button aria-label="Show or hide completed todos" (click)="showCompletedToDos()"
+          matTooltip="{{showCompleted ? 'Hide' : 'Show'}} Completed ToDos">
+          @if (showCompleted) {
+          <mat-icon>unfold_less</mat-icon>
+          } @else {
+          <mat-icon>unfold_more</mat-icon>
+          }
+        </button>
+        }
+      </div>
     </div>
 
     @if(showCompleted) {
-      <label for="showCompletedToDos">
-        <span class="material-symbols-outlined">
-          unfold_less
-        </span>
-      </label>
-    } @else {
-      <label for="showCompletedToDos">
-        <span class="material-symbols-outlined">
-          unfold_more
-        </span>
-      </label>}
-    <div class="show-completed-button-container">
-      <button id="showCompletedToDos" (click)="showCompletedToDos()" style="display: none" title="{{showCompleted ? 'Hide' : 'Show'}} Completed ToDos">
-        {{showCompleted ? 'Hide' : 'Show'}} Completed ToDos
-      </button>
-    </div>
-    </div>
-
-    <table *ngIf="showCompleted">
-      <tr *ngFor="let doneToDoEntry of doneToDoEntries">
-        <td>{{doneToDoEntry}}</td>
-        <td><button (click)="moveToDoEntryToOpen(doneToDoEntry)">Undone</button></td>
-      </tr>
+    <table>
+      @for (entry of doneToDoEntries; track entry) {
+      <tr>
+        <td>{{entry}}</td>
+        <td><button (click)="moveToDoEntryToOpen(entry)">Undone</button></td>
+        }
     </table>
+    }
   </div>
 
 </div>
