@@ -47,19 +47,25 @@
     <table>
       @for (openEntry of openToDoEntries; track openEntry) {
       <tr>
-        <td>{{openEntry}}</td>
-        <td><button (click)="completeToDoEntry(openEntry)">Complete</button></td>
+          <div class="entry">
+            <td class="entry-text">{{openEntry}}</td>
+            <td class="entry-button">
+              <button mat-icon-button aria-label="Complete ToDo" (click)="completeToDoEntry(openEntry)"
+                matTooltip="Complete ToDo" style="transform: scale(1)">
+                <mat-icon>radio_button_unchecked</mat-icon>
+              </button>
+            </td>
+          </div>
+        </tr>
         }
     </table>
   </div>
 
   <div class="completed-todos-container">
     <div class="completed-todo">
-
       <div class="todo-header-text">
         {{"Completed ToDos"}}
       </div>
-
       <div class="show-completed-button">
         @if (doneToDoEntries.length > 0) {
         <button mat-icon-button aria-label="Show or hide completed todos" (click)="showCompletedToDos()"
@@ -78,8 +84,16 @@
     <table>
       @for (doneEntry of doneToDoEntries; track doneEntry) {
       <tr>
-        <td>{{doneEntry}}</td>
-        <td><button (click)="moveToDoEntryToOpen(doneEntry)">Undone</button></td>
+        <div class="entry">
+          <td class="entry-text">{{doneEntry}}</td>
+          <td class="entry-button">
+            <button mat-icon-button aria-label="Uncomplete ToDo" (click)="moveToDoEntryToOpen(doneEntry)"
+              matTooltip="Uncomplete ToDo" style="transform: scale(1)">
+              <mat-icon>radio_button_checked</mat-icon>
+            </button>
+          </td>
+        </div>
+      </tr>
         }
     </table>
     }

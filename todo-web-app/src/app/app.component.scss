@@ -19,7 +19,7 @@ header {
 
 .todo-container {
     max-width: 500px;
-    padding: 100px;
+    padding: 60px;
     margin: 0 auto;
 }
 
@@ -88,6 +88,36 @@ header {
     margin: 0 auto;
     display: flex;
     height: 68px;
+}
+
+.entry {
+    width: 90%;
+    margin: 0 auto;
+    display: flex; ;
+    background-color: #e7e8ec;
+    border-radius: 20px;
+    margin: 0 auto 1em;
+}
+
+.entry-text {
+    display: flex; 
+    margin-right: auto;
+    align-items: center;
+    padding-left: 12px;
+}
+
+.entry-button {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    height: 32px;
 }
 
 ::ng-deep .mat-mdc-text-field-wrapper {
