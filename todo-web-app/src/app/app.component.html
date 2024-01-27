@@ -45,10 +45,11 @@
       {{"Open ToDos"}}
     </div>
     <table>
-      <tr *ngFor="let openToDoEntry of openToDoEntries">
-        <td>{{openToDoEntry}}</td>
-        <td><button (click)="completeToDoEntry(openToDoEntry)">Complete</button></td>
-      </tr>
+      @for (openEntry of openToDoEntries; track openEntry) {
+      <tr>
+        <td>{{openEntry}}</td>
+        <td><button (click)="completeToDoEntry(openEntry)">Complete</button></td>
+        }
     </table>
   </div>
 
@@ -75,10 +76,10 @@
 
     @if(showCompleted) {
     <table>
-      @for (entry of doneToDoEntries; track entry) {
+      @for (doneEntry of doneToDoEntries; track doneEntry) {
       <tr>
-        <td>{{entry}}</td>
-        <td><button (click)="moveToDoEntryToOpen(entry)">Undone</button></td>
+        <td>{{doneEntry}}</td>
+        <td><button (click)="moveToDoEntryToOpen(doneEntry)">Undone</button></td>
         }
     </table>
     }
